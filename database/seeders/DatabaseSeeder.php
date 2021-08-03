@@ -14,10 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(
+        $this->call([
             EventSeeder::class,
-        );
-
-        Log::factory(1000000)->create();
+            LogSeeder::class,
+        ]);
     }
 }

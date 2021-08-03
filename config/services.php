@@ -30,4 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'clickhouse' => [
+        'host' => env('CLICKHOUSE_HOST', '127.0.0.1'),
+        'port' =>  env('CLICKHOUSE_PORT', '8123'),
+        'username' =>  env('CLICKHOUSE_NAME', 'default'),
+        'password' =>  env('CLICKHOUSE_PASSWORD', 'password'),
+    ],
+
 ];

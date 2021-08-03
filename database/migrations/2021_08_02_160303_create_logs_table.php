@@ -16,10 +16,10 @@ class CreateLogsTable extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->text('body');
-            $table->unsignedBigInteger('event_id');
+            $table->uuid('event_uuid');
             $table->timestamps();
 
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_uuid')->references('uuid')->on('events');
         });
     }
 

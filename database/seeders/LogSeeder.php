@@ -10,8 +10,8 @@ use Ramsey\Uuid\Uuid;
 
 class LogSeeder extends Seeder
 {
-    private const COUNT = 1000000;
-    private const CHUNKS_COUNT = 1000;
+    private const COUNT = 20000000;
+    private const CHUNKS_COUNT = 20000;
 
     private $events;
     private $faker;
@@ -36,13 +36,15 @@ class LogSeeder extends Seeder
 
         for($chunk = 0; $chunk < self::COUNT; $chunk += $plus) {
             $rows = [];
-            info('chunk', [$chunk]);
             for ($i = 0; $i < $plus; $i++) {
                 $rows[] = $this->make();
             }
 
             $db->insert('logs', $rows, $this->getColumns());
         }
+
+        print("Logs successfully seeded.\n");
+        info('Logs sucessfully seeded.');
 
         # for() / 1000
     }
